@@ -57,7 +57,7 @@ Clone o projeto
 Entre no diretório do projeto
 
 ```bash
-  cd my-project
+  cd pokedex
 ```
 
 Instale as dependências
