@@ -39,7 +39,7 @@ Esta **Pokédex** exibe centenas de pokémons e seus respectivos stats por meio 
    <img height="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
 </p>
 <p>
-   Para o desenvolvimento deste projeto, utilizei a biblioteca <strong>React</strong> para a construção de componentes que se repetem na tela com poucas alterações entre si, como, por exemplo, os containers que exibem os nomes e imagens dos pokémons na home. Além disso, o React permite o carregamento de mais pokémons na página sem a necessidade de recarregá-la.
+   Para o desenvolvimento deste projeto, utilizei a biblioteca <strong>React</strong> para a construção de componentes que se repetem na tela com poucas alterações entre si, como, por exemplo, os containers que exibem os nomes e imagens dos pokémons na <i>home</i>. Além disso, o React permite renderizar mais pokémons na página ao toque de um clique sem a necessidade de recarregá-la.
 </p>
 <p>
    Optei por requisitar à <strong>PokéAPI</strong> apenas os pokémons que devem ser imediatamente renderizados na tela no momento em que a página é carregada e, eventualmente, quando o usuário clica no botão <i>More Pokémon</i>. Desse modo, há uma melhor performance, visto que cada requisição à PokéAPI se limita aos dados de apenas dez pokémons e não dos 1154 de uma só vez.
