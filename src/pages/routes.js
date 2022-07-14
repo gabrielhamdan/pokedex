@@ -7,8 +7,8 @@ const AppRoutes = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/pokemon/:name" element={<PokemonPage />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/pokemon/:name" element={<PokemonPage />} />
             </Routes>
         </BrowserRouter>
     );

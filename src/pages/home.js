@@ -1,4 +1,4 @@
-import PokeDisplay from "../components/pokeDisplay/pokeDisplay";
+import PokeDisplay from "../components/poke-display/poke-display";
 import { useContext } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { ThemeContext } from "../contexts/theme-context";
@@ -16,6 +16,7 @@ const Home = () => {
                 </BtnContainer>
                 <PokeDisplay />
             </Container>
+            <Footer><a href="https://www.flaticon.com/free-icons/pokemon" target="_blank" rel="noreferrer" title="pokemon icons">Pokemon icons created by Nikita Golubev - Flaticon</a></Footer>
         </>
     );
 }
@@ -26,6 +27,15 @@ const GlobalStyle = createGlobalStyle`
 body {
     background-color: ${props => props.theme.background}
 }
+`
+
+const Footer = styled.footer`
+    display: flex;
+    font-size: 8px;
+    height: 50px;
+    margin: 15px;
+    justify-content: center;
+    align-items: end;
 `
 
 const Container = styled.div`

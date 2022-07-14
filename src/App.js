@@ -10,9 +10,7 @@ function App() {
         <Container>
           <AppRoutes />
         </Container>
-        <footer><a href="https://www.flaticon.com/free-icons/pokemon" target="_blank" title="pokemon icons">Pokemon icons created by Nikita Golubev - Flaticon</a></footer>
       </ThemeProvider>
-      {console.log("A wild user appears!")}
     </>
   );
 }
@@ -46,8 +44,10 @@ h2 {
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  justify-content: space-around;
 `
 
 export default App;

@@ -1,24 +1,20 @@
-import { useState, useEffect } from "react";
-import { loadPokemons } from "../../services/pokeAPI";
+import { useState, useEffect, useContext } from "react";
+import { getPokemons } from "../../services/pokeAPI";
 import Pokemon from "../pokemon/pokemon";
 import Button from '../button/button';
 import styled from "styled-components";
 
 const PokeDisplay = () => {
-    const [display, setDisplay] = useState({
-        pokemons: []
-    });
+    const [pokemons, setPokemons] = useState([]);
 
     const pokemonsPerLoad = 10;
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
-            const loadTenPokemons = await loadPokemons(offset);
+            const loadPokemons = await getPokemons(offset);
 
-            setDisplay({
-                pokemons: [...display.pokemons, ...loadTenPokemons]
-            });
+            setPokemons([...pokemons, ...loadPokemons]);
         }
 
         fetchData();
@@ -33,7 +29,7 @@ const PokeDisplay = () => {
             <Container>
                 <PokeList>
                     {
-                        display.pokemons.map((pokemon, index) => {
+                        pokemons.map((pokemon, index) => {
                             return <Pokemon pokemon={pokemon} key={index} />
                         })
                     }
@@ -45,11 +41,11 @@ const PokeDisplay = () => {
 }
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 10px;
 `
 
 const PokeList = styled.ul`

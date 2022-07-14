@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { fetchPokemon } from "../../services/pokeAPI";
+import { getPokemon } from "../../services/pokeAPI";
 import { useParams, Link } from 'react-router-dom';
 import styled from "styled-components";
 
 const PokeStats = () => {
-    const [pokemonStats, setStats] = useState({});
-    const [abilities, setAbility] = useState([])
+    const [pokemonData, setPokemonData] = useState({});
+    const [abilities, setAbilities] = useState([])
 
     const { name } = useParams();
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${name}`);
+            const data = await getPokemon(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
-            setStats(data);
+            setPokemonData(data);
 
             const abilitiesPromises = await data.abilities.map(async ability => {
                 const response = await fetch(ability.ability.url)
@@ -21,7 +21,7 @@ const PokeStats = () => {
             });
 
             const abilitiesDescription = await Promise.all(abilitiesPromises)
-            setAbility(abilitiesDescription);
+            setAbilities(abilitiesDescription);
         }
 
         fetchData();
@@ -50,20 +50,20 @@ const PokeStats = () => {
 
     return (
         <>
-            {!isEmpty(pokemonStats) && (
+            {!isEmpty(pokemonData) && (
                 <Section>
                     <Link to={"/"}>
                         <Btn>back</Btn>
                     </Link>
                     <Pokemon>
-                        <PokemonImage src={pokemonStats.sprites.front_default} alt={pokemonStats.name} />
-                        <PokemonName>{`A wild ${pokemonStats.name.toUpperCase()} appears!`}</PokemonName>
+                        <PokemonImage src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+                        <PokemonName>{`A wild ${pokemonData.name.toUpperCase()} appears!`}</PokemonName>
                     </Pokemon>
                     <div>
                         <Stats>
                             <h3>Moves</h3>
                             <Values>
-                                {pokemonStats.moves.map((move, index) => {
+                                {pokemonData.moves.map((move, index) => {
                                     return <ListItems key={index}>{move.move.name}</ListItems>
                                 })}
                             </Values>
@@ -79,7 +79,7 @@ const PokeStats = () => {
                         <Stats>
                             <h3>Type</h3>
                             <Values>
-                                {pokemonStats.types.map((type, index) => {
+                                {pokemonData.types.map((type, index) => {
                                     return <ListItems key={index}>{type.type.name}</ListItems>
                                 })}
                             </Values>
