@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { getPokemons } from "../../services/pokeAPI";
 import Pokemon from "../pokemon/pokemon";
 import Button from '../button/button';

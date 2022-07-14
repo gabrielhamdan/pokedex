@@ -25,7 +25,7 @@ const PokeStats = () => {
         }
 
         fetchData();
-    }, []);
+    }, name);
 
     function isEmpty(obj) {
         for (var prop in obj) {
