@@ -1,6 +1,6 @@
 ![Logo](https://user-images.githubusercontent.com/74621925/175611364-e2d90132-0d0e-4bc2-bf80-55775e1f5656.png)
 
-Esta **Pokédex** exibe centenas de pokémons e seus respectivos stats por meio da [PokéAPI](https://pokeapi.co/)! Acesse o build da página clicando [aqui](https://62d02f3b91007b08b9ce2284--pokedex-ghamdan.netlify.app/){:target="_blank"}.
+Esta **Pokédex** exibe centenas de pokémons e seus respectivos stats por meio da [PokéAPI](https://pokeapi.co/)! Acesse o build da página clicando [aqui](https://62d02f3b91007b08b9ce2284--pokedex-ghamdan.netlify.app/ "target=_blank").
 
 
 ## ⚙ Funcionalidades
